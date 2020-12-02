@@ -26,7 +26,5 @@
        <% end %>
     <% end %>
 
-  </div>
-
-  <a href="#" class='another-food'>別の<%= @food.user.nickname %>の商品を見る</a>
+   <%= link_to "もっと見る", "/users/#{@food.user_id}", class: 'another-food' %>
 </div>
