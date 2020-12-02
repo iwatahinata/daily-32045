@@ -1,6 +1,35 @@
 <%= render "shared/header" %>
 
-<div class='main'>
+<div class="main">
+
+
+
+
+
+<div class="food-lists">
+  <div class="list">
+     <% @foods.each do |food| %>
+          <% if food.image.attached? %>
+            <%= image_tag food.image, class: "food-img" %>
+          <% end %>
+          <div class='food-info'>
+            <%= link_to food.user.nickname, "#", class: "user-name", method: :get %>
+            <%= link_to food.title, "#", class: "food-title", method: :get %>
+            <div class="food-price">
+              <p><%= food.price %>円</P>
+            </div>
+          </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 </div>
 
 <%#<%= render "shared/footer" %>
