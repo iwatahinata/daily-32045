@@ -19,8 +19,8 @@
 
     <% if user_signed_in? %>
        <% if current_user.id == @food.user_id  %>
-              <%= link_to '商品の編集', "#", method: :get, class: "food-btn" %>
-              <%= link_to '削除', "#", method: :delete, class:'food-destroy' %>
+              <%= link_to '商品の編集', edit_food_path(@food.id), method: :get, class: "food-btn" %>
+              <%= link_to '削除', "/foods/#{@food.id}", method: :delete, class:'food-destroy' %>
        <% else %>
               <%= link_to 'カートへ入れる', "#",class:"food-btn"%>
        <% end %>
