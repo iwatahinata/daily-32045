@@ -21,6 +21,27 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
   end
 
+  def edit
+    @food = Food.find(params[:id])
+  end
+
+  def update
+    @food = Food.find(params[:id])
+    if @food.update(food_params)
+      redirect_to food_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @food = Food.find(params[:id])
+    if current_user.id = @food.user_id
+      @food.destroy
+      redirect_to root_path
+    end
+  end
+
   private
   def food_params
     params.require(:food).permit(:title, :image, :price).merge(user_id: current_user.id)
