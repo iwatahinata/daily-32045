@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new]
   def index
+    @foods = Food.all.order("id DESC")
   end
 
   def new
