@@ -1,13 +1,8 @@
 <%= render "shared/header" %>
 
 <div class="main">
-    <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "#{@name}さんのプロトタイプ"%>
+        <%= @nickname %>
       </h2>
-      <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
-        <%= render partial: 'prototypes/prototype', collection: @prototypes %>
-      </div>
-    </div>
+        <%= render partial: 'shared/food', collection: @foods %>
 </div>

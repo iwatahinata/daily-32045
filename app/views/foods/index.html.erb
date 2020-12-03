@@ -3,17 +3,14 @@
 <div class="main">
 
 
-
-
-
 <div class="food-lists">
   <div class="list">
      <% @foods.each do |food| %>
           <% if food.image.attached? %>
-            <%= image_tag food.image, class: "food-img" %>
+            <%= link_to image_tag(food.image, class: "food-img"), food_path(food.id), method: :get %>
           <% end %>
           <div class='food-info'>
-            <%= link_to food.user.nickname, "#", class: "user-name", method: :get %>
+            <%= link_to food.user.nickname, "/users/#{food.user_id}", class: "user-name", method: :get %>
             <%= link_to food.title, food_path(food.id), class: "food-title", method: :get %>
             <div class="food-price">
               <p><%= food.price %>円</P>
@@ -22,11 +19,6 @@
     <% end %>
   </div>
 </div>
-
-
-
-
-
 
 
 
