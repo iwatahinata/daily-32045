@@ -1,13 +1,10 @@
 
-.food-lists{
+.list{
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.list {
   width: 100vw;
-  padding: 2vw;
+  padding: 3vw;
   list-style: none;
 }
 
@@ -23,21 +20,19 @@
 
 .food-title{
  text-decoration: none;
- font-size: 2.5vh;
+ font-size: 3vh;
  color: black;
  font-weight: bold;
 }
 
 .user-name{
   text-decoration: none;
-  color: black;
+  color: #181717af;
   font-weight: bold;
 }
 
 .food-price {
   font-size: 2vh;
-  display: flex;
-  justify-content: space-between;
 }
 
 
