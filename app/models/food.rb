@@ -2,7 +2,7 @@ class Food < ApplicationRecord
   belongs_to       :user
   has_one_attached :image
   has_many         :orders
-  has_many         :line_items, dependent: :destroy
+  has_many         :line_items
 
   with_options presence: true do
   validates :image

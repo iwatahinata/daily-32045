@@ -7,7 +7,7 @@ class CartsController < ApplicationController
       @line_items = @cart.line_items
     end
   
-    def add_item
+    def add_food
       @line_item = @cart.line_items.build(food_id: params[:food_id]) if @line_item.blank?
       @line_item.quantity += params[:quantity].to_i
       if @line_item.save
@@ -19,7 +19,10 @@ class CartsController < ApplicationController
   
     def destroy
       @cart.destroy
-      redirect_to current_cart
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: '買い物カゴの中身をすべて削除しました' }
+        format.json { head :no_content }
+      end
     end
   
     private
