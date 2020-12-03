@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
        
   has_many :foods
-  has_many :orders
+  has_many :orders,  dependent: :nullify
+  has_one  :address, dependent: :destroy
 
   with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: '全角文字を使用してください' } do
     validates :first_name
