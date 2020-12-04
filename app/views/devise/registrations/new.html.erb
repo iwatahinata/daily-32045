@@ -15,8 +15,14 @@
       <label class="form-text">ニックネーム</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) furima太郎", maxlength:"40" %>
-  
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) daily太郎", maxlength:"20" %>
+  </div>
+  <div class="form-group">
+    <div class="form-text">
+        アカウントの種類
+        <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:type_id, Type.all, :id, :name, {}, {class:"select-box", id:"user-type"}) %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
