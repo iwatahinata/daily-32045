@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
        
   has_many :foods
-  has_many :orders
+  has_many :orders,  dependent: :nullify
+  has_one  :address, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :type
