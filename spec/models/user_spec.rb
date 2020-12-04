@@ -87,6 +87,11 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
       end
+      it "アカウントの種類がないと登録できない" do
+        @user.type_id = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("アカウントは数値で入力してください")
+      end
     end
   end
 end
