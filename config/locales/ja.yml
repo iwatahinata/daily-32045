@@ -5,5 +5,11 @@ ja:
        nickname: ニックネーム
        first_name: 苗字
        last_name: 名前
+
        type_id: アカウント
+
+     food:
+      title: 商品名
+      price: 価格
+      image: 画像
      

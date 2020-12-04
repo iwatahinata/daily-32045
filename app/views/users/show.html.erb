@@ -1,0 +1,8 @@
+<%= render "shared/header" %>
+
+<div class="contents row">
+  <p class="user-name">・<%= @nickname %>の商品一覧・</p>
+  <% @foods.each do |food| %>
+    <%= render partial: "shared/food", locals: { food: food } %>
+  <% end %>
+</div>

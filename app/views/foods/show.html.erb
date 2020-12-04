@@ -1,0 +1,30 @@
+<%= render "shared/header" %>
+
+<div class="food-show">
+
+  <div class="food-box">
+
+    <h2 class="name">
+      <%= @food.title %>
+    </h2>
+    <div class='food-img-content'>
+      <%= image_tag @food.image ,class:"food-box-img" %>
+    </div>
+    <div class="food-price-box">
+      <span class="food-price">
+        ¥<%= @food.price %>
+      </span>
+    </div>
+
+
+    <% if user_signed_in? %>
+       <% if current_user.id == @food.user_id  %>
+              <%= link_to '商品の編集', edit_food_path(@food.id), method: :get, class: "food-btn" %>
+              <%= link_to '削除', "/foods/#{@food.id}", method: :delete, class:'food-destroy' %>
+       <% else %>
+              <%= link_to 'カートへ入れる', "#",class:"food-btn"%>
+       <% end %>
+    <% end %>
+
+   <%= link_to 'もっと見る', "/users/#{@food.user_id}", class: 'another-food' %>
+</div>

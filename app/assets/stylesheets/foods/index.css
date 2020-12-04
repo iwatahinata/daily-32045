@@ -1,0 +1,41 @@
+
+.list{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  padding: 3vw;
+  list-style: none;
+}
+
+.food-img {
+  width: 30vh;
+  height: 30vh;
+}
+
+.food-info {
+  color: black;
+  padding: 1vw;
+}
+
+.food-title{
+ text-decoration: none;
+ font-size: 3vh;
+ color: black;
+ font-weight: bold;
+}
+
+.user-name{
+  text-decoration: none;
+  color: #181717af;
+  font-weight: bold;
+}
+
+.food-price {
+  font-size: 2vh;
+}
+
+
+
+
+
