@@ -6,5 +6,6 @@ FactoryBot.define do
     password_confirmation {password}
     first_name            {"太郎"}
     last_name             {"山田"}
+    type_id               {"3"}
   end
 end
