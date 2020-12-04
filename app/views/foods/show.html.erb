@@ -22,7 +22,7 @@
               <%= link_to '商品の編集', edit_food_path(@food.id), method: :get, class: "food-btn" %>
               <%= link_to '削除', "/foods/#{@food.id}", method: :delete, class:'food-destroy' %>
        <% else %>
-              <%= link_to 'カートへ入れる',line_items_path(food_id: @food.id), class:"food-btn", html_options = {method: :post}%>
+              <%= link_to 'カートへ入れる',"#", class:"food-btn", method: :post%>
        <% end %>
     <% end %>
 

@@ -18,7 +18,7 @@
       <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
 　　　　<% if user_signed_in? %>
           <% if current_user.type_id == 3 %>
-            <li><%= link_to '出品する', "#", class: "shop" %></li>
+            <li><%= link_to '出品する', new_food_path, class: "shop" %></li>
             <li><%= link_to 'マイページ', "#", class: "mypage" %></li>
           <% end %>
           <% if current_user.type_id == 2 %>
