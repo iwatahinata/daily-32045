@@ -1,14 +1,16 @@
 
 .list{
-  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100vw;
-  padding: 3vw;
+  padding: 5vw;
   list-style: none;
 }
 
 .food-img {
-  width: 30vh;
-  height: 30vh;
+  width: 20vh;
+  height: 20vh;
 }
 
 .food-info {
@@ -31,6 +33,10 @@
 
 .food-price {
   font-size: 2vh;
+}
+
+.main {
+  background-color: lightgray;
 }
 
 
