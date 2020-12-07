@@ -2,23 +2,32 @@
 
 <div class="main">
 
-<div class="food-lists">
-  <div class="list">
+<div class="side-var">
+</div>
+
+
+<div class="contents">
      <% @foods.each do |food| %>
+     <div class="food-list">
           <% if food.image.attached? %>
             <%= link_to image_tag(food.image, class: "food-img"), food_path(food.id), method: :get %>
           <% end %>
           <div class='food-info'>
             <%= link_to food.user.nickname, "/users/#{food.user_id}", class: "user-name", method: :get %><br>
-            <%= link_to food.title, food_path(food.id), class: "food-title", method: :get %>
-            <p class="food-price"><%= food.price %>円</P>
-          </div>
-    <% end %>
-  </div>
-</div>
+            <%= link_to food.title, food_path(food.id), class: "food-title", method: :get %><br>
+            ¥<%= food.price %>
 
+                <div class='star-btn'>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'>0</span>
+                </div>
+          </div>
+     </div>
+    <% end %>
+</div>
 
 
 </div>
 
 <%= render "shared/footer" %>
+

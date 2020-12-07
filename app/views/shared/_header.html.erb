@@ -1,39 +1,32 @@
 <header class='top-page-header'>
 
-<div class='search-bar-contents'>
-    <%= link_to image_tag("Daily-logo.png", class:"daily-logo"), "/" %>
-
-    <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: 'キーワードから探す', class: 'input-box' %>
-      <%= form.submit "検索", class: "search-button" %>
-    <% end %>
-
-
-  </div>
-  <div class='nav'>
-    <ul class='lists-left'>
-      
-    </ul>
-    <ul class='lists-right'>
-      <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
-　　　　<% if user_signed_in? %>
-          <% if current_user.type_id == 3 %>
-            <li><%= link_to '出品する', new_food_path, class: "shop" %></li>
-            <li><%= link_to 'マイページ', "#", class: "mypage" %></li>
-          <% end %>
-          <% if current_user.type_id == 2 %>
-            <li><%= link_to 'カートを見る', "#", class: "cart" %></li>
-          <% end %>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
-       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-       <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+<div class='header'>
+   <div class='header-logo'>
+     <%= link_to image_tag("Daily-logo.png", class:"daily-logo"), "/" %>
+   </div>
+   <div class='header-search'>
+      <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: 'キーワードから探す', class: 'input-box' %>
+        <%= form.submit "検索", class: "search-button" %>
       <% end %>
-
-      
-
-      <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
-    </ul>
-  </div>
+   </div>
+   <div class='nav'>
+      <ul class='nav-lists'>
+        <% if user_signed_in? %>
+            <% if current_user.type_id == 3 %>
+              <li><%= link_to '出品する', new_food_path, class: "shop" %></li>
+              <li><%= link_to 'マイページ', "#", class: "mypage" %></li>
+            <% end %>
+            <% if current_user.type_id == 2 %>
+              <li><%= link_to 'マイページ', "#", class: "mypage" %></li>
+            <% end %>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <% else %>
+              <li><button class='nav-btn-login'><%= link_to 'ログイン', new_user_session_path, class: "login" %></button></li>
+              <li><button class='nav-btn-sign-up'><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></button></li>
+        <% end %>
+      </ul>
+   </div>
+</div>
 
 </header>
