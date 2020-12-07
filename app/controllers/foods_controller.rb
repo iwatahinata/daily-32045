@@ -1,5 +1,8 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new]
+  before_action :set_food, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
+
   def index
     @foods = Food.all.order("id DESC")
   end
@@ -18,11 +21,13 @@ class FoodsController < ApplicationController
   end
 
   def show
-    @food = Food.find(params[:id])
   end
 
   def edit
-    @food = Food.find(params[:id])
+  end
+
+  def search
+    @foods = Food.search(params[:keyword])
   end
 
   def update
@@ -46,4 +51,15 @@ class FoodsController < ApplicationController
   def food_params
     params.require(:food).permit(:title, :image, :price).merge(user_id: current_user.id)
   end
+
+  def set_food
+    @food = Food.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
+
 end

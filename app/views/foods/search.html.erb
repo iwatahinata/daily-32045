@@ -1,10 +1,8 @@
 <%= render "shared/header" %>
 
-<div class="main">
 
-<div class="food-lists">
-  <div class="list">
-     <% @foods.each do |food| %>
+<div class="search-contents">
+<% @foods.each do |food| %>
           <% if food.image.attached? %>
             <%= link_to image_tag(food.image, class: "food-img"), food_path(food.id), method: :get %>
           <% end %>
@@ -14,11 +12,7 @@
             <p class="food-price"><%= food.price %>円</P>
           </div>
     <% end %>
-  </div>
 </div>
 
 
-
-</div>
-
-<%= render "shared/footer" %>
+<%#<%= render "shared/footer" %>
