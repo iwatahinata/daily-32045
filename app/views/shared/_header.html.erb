@@ -11,21 +11,23 @@
       <% end %>
    </div>
    <div class='nav'>
-      <ul class='nav-lists'>
+        <ul class='nav-lists-login'>
         <% if user_signed_in? %>
             <% if current_user.type_id == 3 %>
-              <li><%= link_to '出品する', new_food_path, class: "shop" %></li>
-              <li><%= link_to 'マイページ', "#", class: "mypage" %></li>
+              <li class="nav"><%= link_to '出品する', new_food_path, class: "shop" %></li>
+              <li class="nav"><%= link_to 'マイページ', "#", class: "mypage" %></li>
             <% end %>
             <% if current_user.type_id == 2 %>
-              <li><%= link_to 'マイページ', "#", class: "mypage" %></li>
+              <li class="nav"><%= link_to 'マイページ', "#", class: "mypage" %></li>
             <% end %>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        </div>
         <% else %>
+        <ul class='nav-lists'>
               <li><button class='nav-btn-login'><%= link_to 'ログイン', new_user_session_path, class: "login" %></button></li>
               <li><button class='nav-btn-sign-up'><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></button></li>
+        </ul>
         <% end %>
-      </ul>
    </div>
 </div>
 

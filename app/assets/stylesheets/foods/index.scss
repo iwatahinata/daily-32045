@@ -1,63 +1,11 @@
-#wrap{
-  background-color:white;
-  padding: 50px 0;
-}
-#slider{
-  width: 550px;
-  margin: 0 auto;
-  img{
-    width: 100%;
-  }
-}
-button{
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.slide-dots{
-  text-align: center;
-  li{
-    display: inline-block;
-    margin: 0 15px;
-    button{
-      position: relative;
-      text-indent: -9999px;
-      &:before{
-        content: '○';
-        font-size: 20px;
-        text-indent: 0px;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    }
-    &.slick-active{
-      button:before{
-        content: '●';
-      }
-    }
-  }
-}
-
-
 .main {
   background-color:rgb(241, 241, 241);
-  width: 80vw;
+  width: 100vw;
   display: flex;
   margin: 0 auto;
   
 }
-.side-var {
- background-color: teal;
- width: 20vw;
- margin-right: 5vw;
-}
+
 
 .contents {
   display: flex;

@@ -11,16 +11,16 @@
   height: 75px;
   width: 125px;
   display: flex;
-  margin-left: 100px;
+  margin-left: 150px;
 }
 
 .header-search {
   display: flex;
-  margin-left: 450px;
+  margin-left: 0px;
 }
 
 .input-box {
-  width: 200px;
+  width: 350px;
   height: 30px;
   margin-right: 3px;
 }
@@ -39,28 +39,41 @@
   list-style: none;
   display: flex;
   align-items: center;
-  margin-right: 100px;
+  margin-right: 0;
+}
+
+.nav-lists-login {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-right: 180px;
+}
+
+.nav {
+  margin-right: 20px;
 }
 
 .shop {
   text-decoration: none;
   color: black;
+  font-weight: bold;
 }
 
 .mypage {
   text-decoration: none;
   color: black;
+  font-weight: bold;
 }
 
 .logout {
   text-decoration: none;
   color: black;
+  font-weight: bold;
 }
 
 .login {
   text-decoration: none;
-  color: coral;
-  
+  color: coral;  
 }
 
 .sign-up {
@@ -84,3 +97,5 @@
   border: none;
   border-radius: 5px;
 }
+
+
