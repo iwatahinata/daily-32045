@@ -3,7 +3,7 @@
   padding: 50px 0;
 }
 #slider{
-  width: 600px;
+  width: 550px;
   margin: 0 auto;
   img{
     width: 100%;
@@ -45,15 +45,17 @@ button{
   }
 }
 
+
 .main {
   background-color:rgb(241, 241, 241);
-  width: 100vw;
+  width: 80vw;
   display: flex;
+  margin: 0 auto;
   
 }
 .side-var {
  background-color: teal;
- width: 15vw;
+ width: 20vw;
  margin-right: 5vw;
 }
 
