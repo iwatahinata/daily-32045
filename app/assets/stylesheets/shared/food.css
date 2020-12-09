@@ -1,6 +1,12 @@
+
+
 .user-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2vw;
+  width: 150px;
+  background-color: white;
+  margin: 20px;
+  text-align: center;
+  border: 1px solid black;
 }
+
+
+

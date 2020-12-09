@@ -15,10 +15,10 @@
         <% if user_signed_in? %>
             <% if current_user.type_id == 3 %>
               <li class="nav"><%= link_to '出品する', new_food_path, class: "shop" %></li>
-              <li class="nav"><%= link_to 'マイページ', "#", class: "mypage" %></li>
+              <li class="nav"><%= link_to 'マイページ', user_path(current_user.id), class: "mypage" %></li>
             <% end %>
             <% if current_user.type_id == 2 %>
-              <li class="nav"><%= link_to 'マイページ', "#", class: "mypage" %></li>
+              <li class="nav"><%= link_to 'カートへ', "#", class: "mypage" %></li>
             <% end %>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
         </div>

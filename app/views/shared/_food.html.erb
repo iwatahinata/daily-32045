@@ -1,12 +1,15 @@
-<div class="food-lists">
+<div class="food">
 
-  <div class="user-list">
-      <%= link_to image_tag(food.image, class: "food-img"), food_path(food.id), method: :get %>
-    <div class='food-info'>
-      <%= link_to food.title, food_path(food.id), class: "food-title", method: :get %>
-      <p class="food-price"><%= food.price %>円</P>
+  <div class="user-items">
+
+    <div class="user-list">
+        <%= link_to image_tag(food.image, class: "food-img"), food_path(food.id), method: :get %>
+      <div class='food-info'>
+        <%= link_to food.title, food_path(food.id), class: "food-title", method: :get %>
+      </div>
     </div>
-  </div>
 
+
+  </div>
 
 </div>

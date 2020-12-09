@@ -1,9 +1,25 @@
 <%= render "shared/header" %>
 
+
+
+
+
+<div class="add-header">
+  <div class="food-like-box">
+     <%= link_to image_tag("4x-1.png", class:"food-like"), "#" %>
+     <p>１つから注文できる</p>
+  </div>
+  <div class="food-map-box">
+     <%= link_to image_tag("4x-2.png", class:"food-map"), "#" %>
+     <p>お近くのレストランを利用できる</p>
+  </div>
+  <div class="food-deriver-box">
+     <%= link_to image_tag("4x-3.png", class:"food-deriver"), "#" %>
+     <p>すぐにお届けします</p>
+  </div>
 </div>
 
 <div class="main">
-
 
 <div class="contents">
      <% @foods.each do |food| %>

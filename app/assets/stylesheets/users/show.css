@@ -1,5 +1,22 @@
+.contents-row {
+  display: flex;
+  justify-content: center;
+}
+
 .user-name{
   font-size: 25px;
-  text-align: center;
-  margin-bottom:8vh;
+}
+
+.food {
+  background-color:rgb(241, 241, 241);
+  display: flex;
+  flex-wrap: wrap;
+  width: 190px;
+  margin: 0 auto;
+  
+}
+
+.user-items{
+  
+  
 }
