@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
   belongs_to :user
-  belongs_to :address
-  has_many :foods
+  belongs_to :food
+  has_one :address
 end
