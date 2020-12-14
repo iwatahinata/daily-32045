@@ -32,13 +32,27 @@
             <%= link_to food.title, food_path(food.id), class: "food-title", method: :get %><br>
             ¥<%= food.price %>
 
-                <div class='star-btn'>
-                  <%= image_tag "star.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
-                </div>
+
+
+    <% if Favorite.find_by(user_id: current_user.id, food_id: food.id) %>
+          <%= link_to("/favorites/#{food.id}/destroy", {method: "post"}) do %>
+              <span class="fa fa-heart like-btn-unlike"></span>
+          <% end %>
+    <% else %>
+          <%= link_to("/favorites/#{food.id}/create", {method: "post"}) do %>
+              <span class="fa fa-heart like-btn"></span>
+          <% end %>
+    <% end %>
+
+
+
+    
           </div>
      </div>
     <% end %>
+
+
+
 </div>
 
 
