@@ -1,0 +1,2 @@
+class AddressOder < ApplicationRecord
+end
