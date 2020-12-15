@@ -32,12 +32,10 @@
             <%= link_to food.title, food_path(food.id), class: "food-title", method: :get %><br>
             ¥<%= food.price %>
 
-                <div class='star-btn'>
-                  <%= image_tag "star.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
-                </div>
+             <%= render partial: 'favorites/favorite', locals: { food: food} %>
+             
           </div>
-     </div>
+      </div>
     <% end %>
 </div>
 

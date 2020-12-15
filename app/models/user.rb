@@ -6,6 +6,7 @@ class User < ApplicationRecord
        
   has_many :foods
   has_many :orders
+  has_many :favorites, dependent: :destroy
   
 
   extend ActiveHash::Associations::ActiveRecordExtensions
