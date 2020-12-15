@@ -1,2 +1,0 @@
-class AddressOder < ApplicationRecord
-end

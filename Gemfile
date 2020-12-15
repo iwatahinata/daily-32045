@@ -70,5 +70,7 @@ gem 'carrierwave'
 
 gem 'jquery-rails'
 
+gem 'payjp'
+
 
 

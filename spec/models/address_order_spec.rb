@@ -48,6 +48,11 @@ RSpec.describe AddressOrder, type: :model do
         @address_order.valid?
         expect(@address_order.errors.full_messages).to include("Phone number11桁以内で入力してください")
     end
+    it 'tokenが空だと保存できないこと' do
+      @address_order.token = nil
+      @address_order.valid?
+      expect(@address_order.errors.full_messages).to include("Tokenを入力してください")
+    end
   end
  end
 end

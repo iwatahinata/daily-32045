@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   def create
     @address_order = AddressOrder.new(order_params)
     if @address_order.valid?
+      pay_food
       @address_order.save
       redirect_to root_path
     else
@@ -21,7 +22,16 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-      params.require(:address_order).permit(:postal_code, :city, :street, :house_name, :phone_number).merge(user_id: current_user.id, food_id: params[:food_id])
+      params.require(:address_order).permit(:postal_code, :city, :street, :house_name, :phone_number).merge(user_id: current_user.id, food_id: params[:food_id], token: params[:token])
+  end
+
+  def pay_food
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]  # 自身のPAY.JPテスト秘密鍵を記述しましょう
+      Payjp::Charge.create(
+        amount: @food.price,  # 商品の値段
+        card: order_params[:token],    # カードトークン
+        currency: 'jpy'                 # 通貨の種類（日本円）
+      )
   end
 
   def move_to_index
