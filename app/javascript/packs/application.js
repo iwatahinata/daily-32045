@@ -10,7 +10,7 @@ require("channels")
 require("../food_price");
 require('jquery')
 require("../card")
-
+require('./preview')
 
 
 
