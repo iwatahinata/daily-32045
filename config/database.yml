@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: daily_32045_production
-  username: daily_32045
-  password: <%= ENV['DAILY_32045_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
