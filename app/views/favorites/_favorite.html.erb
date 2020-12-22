@@ -1,10 +1,10 @@
   <% if user_signed_in? %> 
     <% if Favorite.find_by(user_id: current_user.id, food_id: food.id) %>
-          <%= link_to("/favorites/#{food.id}/destroy", {method: "post"}) do %>
+          <%= link_to("/favorites/#{food.id}/destroy", method: "post", remote: true) do %>
               <span class="fa fa-heart like-btn-unlike"></span>
           <% end %>
     <% else %>
-          <%= link_to("/favorites/#{food.id}/create", {method: "post"}) do %>
+          <%= link_to("/favorites/#{food.id}/create", method: "post", remote: true) do %>
               <span class="fa fa-heart like-btn"></span>
           <% end %>
     <% end %>

@@ -5,14 +5,14 @@ class FavoritesController < ApplicationController
   def create
       @favorite = Favorite.create(user_id: current_user.id, food_id: params[:food_id])
       @favorite.save
-      redirect_to("/foods/#{params[:pfood_id]}")
+      
 
   end
   
   def destroy
     @favorite = Favorite.find_by(user_id: current_user.id, food_id: params[:food_id])
     @favorite.destroy
-    redirect_to("/foods/#{params[:pfood_id]}")
+    
   end
 
 

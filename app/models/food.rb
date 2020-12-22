@@ -1,7 +1,7 @@
 class Food < ApplicationRecord
   has_one_attached :image
-  has_one          :order
-  belongs_to       :user, optional: true
+  has_one          :order, dependent: :destroy
+  belongs_to       :user, optional: true, dependent: :destroy
   has_many         :favorites, dependent: :destroy
   
 

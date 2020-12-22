@@ -8,15 +8,12 @@
 }
 
 .daily-logo {
-  height: 75px;
+  height: 70px;
   width: 125px;
   display: flex;
-  margin-left: 150px;
 }
 
 .header-search {
-  display: flex;
-  margin-left: 0px;
 }
 
 .input-box {
@@ -46,7 +43,7 @@
   list-style: none;
   display: flex;
   align-items: center;
-  margin-right: 180px;
+  
 }
 
 .nav {
@@ -57,18 +54,33 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
+  white-space: nowrap;
+}
+
+.shop:hover {
+  color: coral;
 }
 
 .mypage {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  white-space: nowrap;
+}
+
+.mypage:hover {
+  color: coral;
 }
 
 .logout {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  white-space: nowrap;
+}
+
+.logout:hover {
+  color: coral;
 }
 
 .login {
@@ -90,12 +102,37 @@
   border-radius: 5px;
 }
 
+.nav-btn-login:hover {
+  opacity: 0.7;
+}
+
 .nav-btn-sign-up {
   width: 80px;
   height: 35px;
   background-color: coral;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
 }
+
+.nav-btn-sign-up:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+  
+  .header-search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  .header-search {
+    display: none;
+  }
+
+}
+
 
 

@@ -31,9 +31,9 @@
             <%= link_to food.user.nickname, "/users/#{food.user_id}", class: "user-name", method: :get %><br>
             <%= link_to food.title, food_path(food.id), class: "food-title", method: :get %><br>
             ¥<%= food.price %>
-
+          <div id="likes_buttons_<%= food.id %>">
              <%= render partial: 'favorites/favorite', locals: { food: food} %>
-             
+          </div>
           </div>
       </div>
     <% end %>
