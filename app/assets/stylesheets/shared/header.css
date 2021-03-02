@@ -118,21 +118,9 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 959px) {
-  /* 959px以下に適用されるCSS（タブレット用） */
-  
-  .header-search {
-    display: none;
-  }
-}
 
-@media screen and (max-width: 480px) {
-  /* 480px以下に適用されるCSS（スマホ用） */
-  .header-search {
-    display: none;
-  }
 
-}
+
 
 
 
