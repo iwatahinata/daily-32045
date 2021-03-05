@@ -1,12 +1,5 @@
 @charset "UTF-8";
 
-// Default Variables
-
-// Slick icon entity codes outputs the following
-// "\2190" outputs ascii character "←"
-// "\2192" outputs ascii character "→"
-// "\2022" outputs ascii character "•"
-
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
@@ -39,15 +32,12 @@ $slick-opacity-not-active: 0.25 !default;
     }
 }
 
-/* Slider */
-
 .slick-list {
     .slick-loading & {
         background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
     }
 }
 
-/* Icons */
 @if $slick-font-family == "slick" {
     @font-face {
         font-family: "slick";
@@ -57,8 +47,6 @@ $slick-opacity-not-active: 0.25 !default;
         font-style: normal;
     }
 }
-
-/* Arrows */
 
 .slick-prev,
 .slick-next {
@@ -127,8 +115,6 @@ $slick-opacity-not-active: 0.25 !default;
         }
     }
 }
-
-/* Dots */
 
 .slick-dotted.slick-slider {
     margin-bottom: 30px;
